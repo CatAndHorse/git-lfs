@@ -1,6 +1,7 @@
 module github.com/git-lfs/git-lfs
 
 require (
+	github.com/ThomsonReutersEikon/go-ntlm v0.0.0-20181130171125-cf23bd1ecf18 // indirect
 	github.com/alexbrainman/sspi v0.0.0-20180125232955-4729b3d4d858
 	github.com/avast/retry-go v2.4.2+incompatible
 	github.com/dpotapov/go-spnego v0.0.0-20190506202455-c2c609116ad0
@@ -8,6 +9,7 @@ require (
 	github.com/git-lfs/go-netrc v0.0.0-20180525200031-e0e9ca483a18
 	github.com/git-lfs/go-ntlm v0.0.0-20190401175752-c5056e7fa066
 	github.com/git-lfs/wildmatch v1.0.4
+	github.com/go-delve/delve v1.4.0 // indirect
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
 	github.com/jcmturner/gofork v1.0.0 // indirect
 	github.com/mattn/go-isatty v0.0.4
@@ -23,8 +25,8 @@ require (
 	github.com/xeipuuv/gojsonreference v0.0.0-20180127040603-bd5ef7bd5415 // indirect
 	github.com/xeipuuv/gojsonschema v0.0.0-20170210233622-6b67b3fab74d
 	golang.org/x/net v0.0.0-20191027093000-83d349e8ac1a
-	golang.org/x/sync v0.0.0-20181221193216-37e7f081c4d4
-	golang.org/x/sys v0.0.0-20190412213103-97732733099d
+	golang.org/x/sync v0.0.0-20190423024810-112230192c58
+	golang.org/x/sys v0.0.0-20190626221950-04f50cda93cb
 	gopkg.in/jcmturner/goidentity.v2 v2.0.0 // indirect
 	gopkg.in/yaml.v2 v2.2.8 // indirect
 )

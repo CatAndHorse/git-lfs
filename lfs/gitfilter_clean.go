@@ -74,7 +74,7 @@ func (f *GitFilter) copyToTemp(reader io.Reader, fileSize int64, cb tools.CopyCa
 		cb = nil
 	}
 
-	ptr, buf, err := DecodeFrom(reader)
+	ptr, buf, err := DecodeFrom(reader,"")
 
 	by := make([]byte, blobSizeCutoff)
 	n, rerr := buf.Read(by)

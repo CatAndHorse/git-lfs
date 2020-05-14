@@ -151,7 +151,7 @@ func (s *PointerScanner) next(blob string) (string, string, *WrappedPointer, err
 	var contentsSha string
 
 	if size <= blobSizeCutoff {
-		if p, err := DecodePointer(bytes.NewReader(buf.Bytes())); err != nil {
+		if p, err := DecodePointer(bytes.NewReader(buf.Bytes()),""); err != nil {
 			contentsSha = fmt.Sprintf("%x", sha.Sum(nil))
 		} else {
 			pointer = &WrappedPointer{

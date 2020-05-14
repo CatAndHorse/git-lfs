@@ -48,7 +48,7 @@ func migrateExportCommand(cmd *cobra.Command, args []string) {
 				return b, nil
 			}
 
-			ptr, err := lfs.DecodePointer(b.Contents)
+			ptr, err := lfs.DecodePointer(b.Contents,"")
 			if err != nil {
 				if errors.IsNotAPointerError(err) {
 					return b, nil

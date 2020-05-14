@@ -108,7 +108,7 @@ func checkoutConflict(file string, stage git.IndexStage) {
 		Exit("Could not find object %q", ref.Sha)
 	}
 
-	ptr, err := lfs.DecodePointer(scanner.Contents())
+	ptr, err := lfs.DecodePointer(scanner.Contents(),"")
 	if err != nil {
 		Exit("Could not find decoder pointer for object %q: %v", ref.Sha, err)
 	}

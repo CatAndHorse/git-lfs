@@ -330,8 +330,8 @@ func (e badPointerKeyError) BadPointerKeyError() bool {
 	return true
 }
 
-func NewBadPointerKeyError(expected, actual string) error {
-	err := Errorf("Expected key %s, got %s", expected, actual)
+func NewBadPointerKeyError(expected, actual ,context string) error {
+	err := Errorf("Expected key %s, got %s at %s", expected, actual,context)
 	return badPointerKeyError{expected, actual, newWrappedError(err, "pointer parsing")}
 }
 

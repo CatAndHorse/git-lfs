@@ -180,7 +180,7 @@ func (s *logScanner) finishLastPointer() *WrappedPointer {
 		return nil
 	}
 
-	p, err := DecodePointer(s.pointerData)
+	p, err := DecodePointer(s.pointerData,"")
 	s.pointerData.Reset()
 
 	if err == nil {

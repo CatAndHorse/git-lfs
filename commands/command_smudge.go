@@ -29,7 +29,7 @@ var (
 // delayedSmudge returns the number of bytes written, whether the checkout was
 // delayed, the *lfs.Pointer that was smudged, and an error, if one occurred.
 func delayedSmudge(gf *lfs.GitFilter, s *git.FilterProcessScanner, to io.Writer, from io.Reader, q *tq.TransferQueue, filename string, skip bool, filter *filepathfilter.Filter) (int64, bool, *lfs.Pointer, error) {
-	ptr, pbuf, perr := lfs.DecodeFrom(from)
+	ptr, pbuf, perr := lfs.DecodeFrom(from,"")
 	if perr != nil {
 		// Write 'statusFromErr(nil)', even though 'perr != nil', since
 		// we are about to write non-delayed smudged contents to "to".
@@ -98,7 +98,7 @@ func delayedSmudge(gf *lfs.GitFilter, s *git.FilterProcessScanner, to io.Writer,
 // were non-fatal, otherwise execution will halt and the process will be
 // terminated by using the `commands.Panic()` func.
 func smudge(gf *lfs.GitFilter, to io.Writer, from io.Reader, filename string, skip bool, filter *filepathfilter.Filter) (int64, error) {
-	ptr, pbuf, perr := lfs.DecodeFrom(from)
+	ptr, pbuf, perr := lfs.DecodeFrom(from,"")
 	if perr != nil {
 		n, err := tools.Spool(to, pbuf, cfg.TempDir())
 		if err != nil {

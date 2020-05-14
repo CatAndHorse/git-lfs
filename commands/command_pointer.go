@@ -50,7 +50,7 @@ func pointerCommand(cmd *cobra.Command, args []string) {
 			ExitWithError(fmt.Errorf("fatal: must specify either --file or --stdin with --compare"))
 		}
 
-		_, err = lfs.DecodePointer(r)
+		_, err = lfs.DecodePointer(r,"")
 		if err != nil {
 			os.Exit(1)
 		}
@@ -106,7 +106,7 @@ func pointerCommand(cmd *cobra.Command, args []string) {
 
 		buf := &bytes.Buffer{}
 		tee := io.TeeReader(compFile, buf)
-		_, err = lfs.DecodePointer(tee)
+		_, err = lfs.DecodePointer(tee,"")
 		compFile.Close()
 
 		pointerName := "STDIN"
